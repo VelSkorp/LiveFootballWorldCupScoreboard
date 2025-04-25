@@ -11,9 +11,11 @@ A simple Java library to track live football matches and their scores in-memory.
 
 ## Assumptions
 
-- Team names are unique per match; no duplicate fixtures.
-- Scores are non-negative and absolute; updating to lower than current score is invalid.
-- Operations on non-existent matches throw `IllegalArgumentException`.
+- **`Fixture`** value type instead of string keys for clearer code.
+- **`Scoreboard`** interface with `InMemoryScoreboard` implementation.
+- **Custom exceptions** (`MatchAlreadyExistsException`, `MatchNotFoundException`).
+- **Immutable summaries** returned vi~~~~a `Collections.unmodifiableList`.
+- **SLF4J logging** for lifecycle events.
 
 ## Usage
 
